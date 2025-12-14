@@ -1,20 +1,21 @@
 package org.example.entity;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Booking {
     private int userId;
     private int roomNumber;
-    private LocalDate checkIn;
-    private LocalDate checkOut;
+    private Date checkIn;
+    private Date checkOut;
     private int totalCost;
     private int userBalanceAtBooking;
     private RoomType roomTypeAtBooking;
     private int roomPriceAtBooking;
 
-    public Booking(LocalDate checkIn, LocalDate checkOut, int roomNumber, int roomPriceAtBooking, RoomType roomTypeAtBooking, int totalCost, int userBalanceAtBooking, int userId) {
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
+    public Booking(Date checkIn, Date checkOut, int roomNumber, int roomPriceAtBooking, RoomType roomTypeAtBooking, int totalCost, int userBalanceAtBooking, int userId) {
+        this.checkIn = new Date (checkIn.getTime());
+        this.checkOut = new Date (checkOut.getTime());
         this.roomNumber = roomNumber;
         this.roomPriceAtBooking = roomPriceAtBooking;
         this.roomTypeAtBooking = roomTypeAtBooking;
@@ -24,19 +25,19 @@ public class Booking {
     }
 
 
-    public LocalDate getCheckIn() {
+    public Date getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(LocalDate checkIn) {
+    public void setCheckIn(Date checkIn) {
         this.checkIn = checkIn;
     }
 
-    public LocalDate getCheckOut() {
+    public Date getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(LocalDate checkOut) {
+    public void setCheckOut(Date checkOut) {
         this.checkOut = checkOut;
     }
 
